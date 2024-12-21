@@ -11,8 +11,17 @@ export async function LoginUser(email,password){
     return data
 }
 export async function GetLicenc(cnic) {
-    const data = await axios.get(`${APIs.getLicenceApi}${cnic}`)
-    .then(res=>{return res.data})
-    .catch(error=>{return error.response.data})
-    return data
+    if(cnic){
+        const data = await axios.get(`${APIs.getLicenceApi}${cnic}`)
+        .then(res=>{return res.data})
+        .catch(error=>{return error.response.data})
+        return data
+    }else{
+        const data = await axios.get(`${APIs.getLicenceApi}`)
+        .then(res=>{return res.data})
+        .catch(error=>{return error.response.data})
+        return data
+    }
 }
+
+

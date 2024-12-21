@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['127.0.0.1']
-      }
+  images: {
+    domains: [
+      'dlimsbackend-production.up.railway.app',  // Add your Railway app domain here
+    ],
+  },
 };
 
 export default nextConfig;
