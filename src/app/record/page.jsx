@@ -17,7 +17,7 @@ export default function Record() {
       <div className={style.box}>
         <div className={style.userImage}>
           {record.userImage?
-          <Image loading="lazy" src={record.userImage?record.userImage:"../../assets/Images/user.png"} alt="Not Found" width={500} height={500} sizes="100%" />
+          <Image loading="lazy" src={record.userImage} alt="Not Found" width={500} height={500} sizes="100%" />
           :<Image loading="lazy" src={require("@/assets/Images/user.png")} alt="Not Found" />
         }
         </div>

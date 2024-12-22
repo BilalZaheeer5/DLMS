@@ -6,11 +6,12 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { TfiLayoutLineSolid } from "react-icons/tfi";
 import { GetLicenc } from "@/libs/ServerActions";
 import { ToastContext } from "@/context/ToastContext";
-import Lottie from "lottie-react";
 import searchingLottie from "@/lottie/search.json"
 import errorLottie from "@/lottie/error.json"
 import { useRouter } from "next/navigation";
 import { recordContext } from "@/context/recordContext";
+import dynamic from 'next/dynamic';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 export default function Home() {
   const [cnic, setCnic] = useState(new Array(13).fill(""));
   const [searching,setSearching] = useState(false)
