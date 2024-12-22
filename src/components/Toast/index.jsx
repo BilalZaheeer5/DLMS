@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import style from "./Toast.module.scss"
 import { IoIosWarning } from "react-icons/io";
 import { FaInfoCircle } from "react-icons/fa";
@@ -15,12 +14,12 @@ export default function Toast({message,type,setShowToast}) {
   setTimeout(() => {
     setShowToast({isOpen:false})
   }, 2000);
-  return ReactDOM.createPortal (
+  return(
     <section className={style.container}>
         <div className={style.toast}>
             {iconType[type]}
             <p>{message}</p>
         </div>
     </section>
-  ,document.querySelector('.modelContainer'))
+  )
 }

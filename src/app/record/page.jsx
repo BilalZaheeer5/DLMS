@@ -4,6 +4,7 @@ import style from "./page.module.scss";
 import { recordContext } from "@/context/recordContext";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 export default function Record() {
   const { record } = useContext(recordContext);
   const router = useRouter();
@@ -15,7 +16,10 @@ export default function Record() {
       <button onClick={() => { router.back(); }} className={style.goBack}><IoArrowBackCircleSharp /></button>
       <div className={style.box}>
         <div className={style.userImage}>
-          <img loading="lazy" src={record.userImage?record.userImage:"../../assets/Images/user.png"} alt="Not Found" />
+          {record.userImage?
+          <Image loading="lazy" src={record.userImage?record.userImage:"../../assets/Images/user.png"} alt="Not Found" width={500} height={500} sizes="100%" />
+          :<Image loading="lazy" src={require("@/assets/Images/user.png")} alt="Not Found" />
+        }
         </div>
         <div className={style.infoBox}>
           <div className={style.userInfo}>

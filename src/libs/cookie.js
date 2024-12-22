@@ -16,7 +16,5 @@ export function getCookie(key) {
 }
 export function deleteCookie(key) {
   // delete the cookie
-  try {
-    Cookies.deleteCookie(key);
-  } catch {}
+    Cookies.remove(key)
 }
